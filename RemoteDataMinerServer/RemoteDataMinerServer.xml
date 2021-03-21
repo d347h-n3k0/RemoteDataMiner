@@ -104,6 +104,98 @@
             Stores the project version
             </summary>
         </member>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.Status">
+            <summary>
+            Programm Status
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Module">
+            <summary>
+            Modules name
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Version">
+            <summary>
+            Module Version
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Mode">
+            <summary>
+            Programm Statusmode
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.Modes">
+            <summary>
+            Programm modes
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.stopped">
+            <summary>
+            Programm not running
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.runing">
+            <summary>
+            Programm running
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.warning">
+            <summary>
+            Programm threw an warning
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.error">
+            <summary>
+            Programm ran into an error
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.crash">
+            <summary>
+            Programm has crashed
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.Handler.CommandHandler">
+            <summary>
+            Command Handler
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Handler.CommandHandler.#ctor">
+            <summary>
+            Standart
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Handler.CommandHandler.CommandHandlerTest(System.Collections.Generic.List{Neko.RemoteDataMinerServer.CustomData.Status})">
+            <summary>
+            Standart
+            </summary>
+            <param name="statuses">Module Status list</param>
+        </member>
+        <member name="E:Neko.RemoteDataMinerServer.Handler.CommandHandler.StatusPost">
+            <summary>
+            Eventhandler for status post
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Handler.CommandHandler.OnStatusPost(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.Handler.StatusPostEventArgs">
+            <summary>
+            StatusPost EventArgs
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.Handler.StatusPostEventArgs.Status">
+            <summary>
+            Server Status
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.Handler.StatusPostEventArgs.TimeReached">
+            <summary>
+            Server Time
+            </summary>
+        </member>
         <member name="T:Neko.RemoteDataMinerServer.Modules.ConfigModule">
             <summary>
             Handles config using
