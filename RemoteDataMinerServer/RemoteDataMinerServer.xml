@@ -120,6 +120,16 @@
             Creates standart config
             </summary>
         </member>
+        <member name="T:Neko.RemoteDataMinerServer.Modules.PluginModule">
+            <summary>
+            Plugin Handler module
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Modules.PluginModule.LoadPlugin">
+            <summary>
+            Loads an Plugin
+            </summary>
+        </member>
         <member name="T:Neko.RemoteDataMinerServer.Modules.ProjectModule">
             <summary>
             Handel project lists

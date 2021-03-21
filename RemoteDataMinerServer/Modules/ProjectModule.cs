@@ -20,7 +20,7 @@ namespace Neko.RemoteDataMinerServer.Modules
         /// Loads saved projects
         /// </summary>
         /// <param name="cache"></param>
-        public void Load(IMemoryCache cache)
+        public static void Load(IMemoryCache cache)
         {
             try
             {
@@ -148,6 +148,7 @@ namespace Neko.RemoteDataMinerServer.Modules
                 else
                 {
                     Create();
+                    Load(cache);
                 }
             }
             catch (Exception e)
@@ -159,20 +160,31 @@ namespace Neko.RemoteDataMinerServer.Modules
         /// <summary>
         /// Creates project lists
         /// </summary>
-        public void Create()
+        public static void Create()
         {
             var currentDir = Directory.GetCurrentDirectory(); //Current operating directory
             Projects projects = new Projects();
 
             try
             {
+                if(!Directory.Exists(currentDir + "/projects/"))
+                {
+                    WriteConsole.WriteWarning("Projects directory not found!");
+                    WriteConsole.WriteInfo("Creating new projects directory....");
+                    Directory.CreateDirectory(currentDir + "/projects/");
+                    WriteConsole.WriteSuccess("Successfully created projects directory");
+                }
+
                 if (!File.Exists(currentDir + "/projects/PHPProjects.json"))
                 {
+
                     using (StreamWriter file = File.CreateText(currentDir + "/projects/PHPProjects.json"))
                     {
+                        WriteConsole.WriteInfo("Creating PHP projects file....");
                         JsonSerializer serializer = new JsonSerializer();
                         //serialize object directly into file stream
                         serializer.Serialize(file, projects.PHP);
+                        WriteConsole.WriteSuccess("Successfully created PHP projects file!");
                     }
                 }
 
@@ -180,9 +192,11 @@ namespace Neko.RemoteDataMinerServer.Modules
                 {
                     using (StreamWriter file = File.CreateText(currentDir + "/projects/HtmlProjects.json"))
                     {
+                        WriteConsole.WriteInfo("Creating HTML projects file....");
                         JsonSerializer serializer = new JsonSerializer();
                         //serialize object directly into file stream
                         serializer.Serialize(file, projects.Html);
+                        WriteConsole.WriteSuccess("Successfully created HTML projects file!");
                     }
                 }
 
@@ -190,29 +204,35 @@ namespace Neko.RemoteDataMinerServer.Modules
                 {
                     using (StreamWriter file = File.CreateText(currentDir + "/projects/JavaProjects.json"))
                     {
+                        WriteConsole.WriteInfo("Creating Java projects file....");
                         JsonSerializer serializer = new JsonSerializer();
                         //serialize object directly into file stream
                         serializer.Serialize(file, projects.Java);
+                        WriteConsole.WriteSuccess("Successfully created Java projects file!");
                     }
                 }
 
-                if (File.Exists(currentDir + "/projects/CSharpProjects.json"))
+                if (!File.Exists(currentDir + "/projects/CSharpProjects.json"))
                 {
                     using (StreamWriter file = File.CreateText(currentDir + "/projects/CSharpProjects.json"))
                     {
+                        WriteConsole.WriteInfo("Creating CSHARP projects file....");
                         JsonSerializer serializer = new JsonSerializer();
                         //serialize object directly into file stream
                         serializer.Serialize(file, projects.CSHARP);
+                        WriteConsole.WriteSuccess("Successfully created CSHARP projects file!");
                     }
                 }
 
-                if (File.Exists(currentDir + "/projects/PythonProjects.json"))
+                if (!File.Exists(currentDir + "/projects/PythonProjects.json"))
                 {
                     using (StreamWriter file = File.CreateText(currentDir + "/projects/PythonProjects.json"))
                     {
+                        WriteConsole.WriteInfo("Creating Python projects file....");
                         JsonSerializer serializer = new JsonSerializer();
                         //serialize object directly into file stream
                         serializer.Serialize(file, projects.Python);
+                        WriteConsole.WriteSuccess("Successfully created Python projects file!"); 
                     }
                 }
             }

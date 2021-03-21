@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteDataMinerServer", "RemoteDataMinerServer\RemoteDataMinerServer.csproj", "{14AF1185-1B07-4DE8-8A28-E252831F5BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteDataMinerServer", "RemoteDataMinerServer\RemoteDataMinerServer.csproj", "{14AF1185-1B07-4DE8-8A28-E252831F5BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{318CE814-3131-49AF-9752-2598B179EEA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{14AF1185-1B07-4DE8-8A28-E252831F5BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14AF1185-1B07-4DE8-8A28-E252831F5BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14AF1185-1B07-4DE8-8A28-E252831F5BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318CE814-3131-49AF-9752-2598B179EEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318CE814-3131-49AF-9752-2598B179EEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318CE814-3131-49AF-9752-2598B179EEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318CE814-3131-49AF-9752-2598B179EEA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

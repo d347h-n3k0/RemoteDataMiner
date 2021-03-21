@@ -14,8 +14,8 @@ namespace Neko.RemoteDataMinerServer
             IMemoryCache cache = new MemoryCache(new MemoryCacheOptions());
 
             ConfigModule.Load(cache);
-
-
+            ProjectModule.Load(cache);
+            
 
 
             Console.ReadLine();

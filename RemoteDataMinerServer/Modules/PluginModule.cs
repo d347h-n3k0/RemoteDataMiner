@@ -12,14 +12,17 @@ namespace Neko.RemoteDataMinerServer.Modules
     /// </summary>
     public class PluginModule
     {
-        public void LoadPlugin()
+        /// <summary>
+        /// Loads an Plugin
+        /// </summary>
+        public static void LoadPlugin()
         {
-            var DLL = Assembly.LoadFile();
+            var DLL = Assembly.LoadFile(@"C:\Users\janni\source\repos\RemoteDataMiner\TestPlugin\bin\Debug\net5.0\TestPlugin.dll");
 
             foreach (Type type in DLL.GetExportedTypes())
             {
                 dynamic c = Activator.CreateInstance(type);
-                c.Output(@"Hello");
+                c.Init(@"Hello");
             }
         }
     }
