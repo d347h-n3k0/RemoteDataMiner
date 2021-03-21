@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RemoteDataMinerServer</name>
+    </assembly>
+    <members>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.ConfigData">
+            <summary>
+            Config Data structure
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ConfigData.Version">
+            <summary>
+            Server Version
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ConfigData.Port">
+            <summary>
+            Host Port
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ConfigData.Logging">
+            <summary>
+            Logging level
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.LoggingLevel">
+            <summary>
+            Logging Levels
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.LoggingLevel.none">
+            <summary>
+            None logging
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.LoggingLevel.crash">
+            <summary>
+            Loggs only crashes
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.LoggingLevel.error">
+            <summary>
+            Loggs errors and crashes
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.LoggingLevel.commands">
+            <summary>
+            Loggs errors, crashes and commands
+            </summary>
+        </member>
+        <member name="F:Neko.RemoteDataMinerServer.CustomData.LoggingLevel.all">
+            <summary>
+            Loggs everything
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.Projects">
+            <summary>
+            Stores all project types
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Projects.Html">
+            <summary>
+            Stores HTML projects
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Projects.Java">
+            <summary>
+            Stores Java projects
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Projects.CSHARP">
+            <summary>
+            Stores CSHAR projects
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Projects.Python">
+            <summary>
+            Stores Python projects
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.Projects.PHP">
+            <summary>
+            Stores PHP projects
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.CustomData.ProjectLayout">
+            <summary>
+            Project layout
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ProjectLayout.Name">
+            <summary>
+            Stores the project name
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ProjectLayout.Path">
+            <summary>
+            Stores the project path
+            </summary>
+        </member>
+        <member name="P:Neko.RemoteDataMinerServer.CustomData.ProjectLayout.Version">
+            <summary>
+            Stores the project version
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.Modules.ConfigModule">
+            <summary>
+            Handles config using
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Modules.ConfigModule.Load(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Loads the config
+            </summary>
+            <param name="cache">Used cache</param>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Modules.ConfigModule.Create">
+            <summary>
+            Creates standart config
+            </summary>
+        </member>
+        <member name="T:Neko.RemoteDataMinerServer.Modules.ProjectModule">
+            <summary>
+            Handel project lists
+            </summary>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Modules.ProjectModule.Load(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Loads saved projects
+            </summary>
+            <param name="cache"></param>
+        </member>
+        <member name="M:Neko.RemoteDataMinerServer.Modules.ProjectModule.Create">
+            <summary>
+            Creates project lists
+            </summary>
+        </member>
+    </members>
+</doc>
