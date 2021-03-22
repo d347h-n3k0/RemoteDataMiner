@@ -26,7 +26,7 @@ namespace Neko.RemoteDataMinerServer.Handler
         /// Standart
         /// </summary>
         /// <param name="statuses">Module Status list</param>
-        public void CommandHandlerTest(List<CustomData.Status> statuses)
+        public void CommandHandlerTest(List<Status> statuses)
         {
             WriteConsole.WriteModuleStatus(statuses);
             OnStatusPost(EventArgs.Empty);

@@ -14,15 +14,17 @@ namespace Neko.RemoteDataMinerServer
         {
             WriteConsole.WriteColoredTop("Remote Data Miner", ConsoleColor.Green);
 
+            List<Status> statuses = new List<Status> { new Status() { Module = "Main", Version = "0.1", Mode = Modes.runing } };
             IMemoryCache cache = new MemoryCache(new MemoryCacheOptions());
 
             ConfigModule.Load(cache);
             ProjectModule.Load(cache);
+            PluginModule.LoadPlugin();
 
             CommandHandler commandHandler = new CommandHandler();
             commandHandler.StatusPost += commandHandler_Status;
 
-            List<CustomData.Status> statuses = new List<CustomData.Status> { new CustomData.Status(){ Module = "Test", Version = "0.1", Mode = CustomData.Modes.runing} };
+            
             commandHandler.CommandHandlerTest(statuses);
 
 

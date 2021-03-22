@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -17,12 +18,23 @@ namespace Neko.RemoteDataMinerServer.Modules
         /// </summary>
         public static void LoadPlugin()
         {
-            var DLL = Assembly.LoadFile(@"C:\Users\janni\source\repos\RemoteDataMiner\TestPlugin\bin\Debug\net5.0\TestPlugin.dll");
+            var CurrentDir = Directory.GetCurrentDirectory();
+            string[] Plugins = Directory.GetFiles(CurrentDir + "/plugins/", "*.dll");
+            List<Assembly> assemblies = new List<Assembly>();
 
-            foreach (Type type in DLL.GetExportedTypes())
+            foreach (string plugin in Plugins)
             {
-                dynamic c = Activator.CreateInstance(type);
-                c.Init(@"Hello");
+                assemblies.Add(Assembly.LoadFile(plugin));
+            }
+            //var DLL = Assembly.LoadFile(@"C:\Users\janni\source\repos\RemoteDataMiner\TestPlugin\bin\Debug\net5.0\TestPlugin.dll");
+
+            foreach (Assembly DLL in assemblies)
+            {
+                foreach (Type type in DLL.GetExportedTypes())
+                {
+                    dynamic c = Activator.CreateInstance(type);
+                    c.Init(@"Hello");
+                }
             }
         }
     }

@@ -104,56 +104,6 @@
             Stores the project version
             </summary>
         </member>
-        <member name="T:Neko.RemoteDataMinerServer.CustomData.Status">
-            <summary>
-            Programm Status
-            </summary>
-        </member>
-        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Module">
-            <summary>
-            Modules name
-            </summary>
-        </member>
-        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Version">
-            <summary>
-            Module Version
-            </summary>
-        </member>
-        <member name="P:Neko.RemoteDataMinerServer.CustomData.Status.Mode">
-            <summary>
-            Programm Statusmode
-            </summary>
-        </member>
-        <member name="T:Neko.RemoteDataMinerServer.CustomData.Modes">
-            <summary>
-            Programm modes
-            </summary>
-        </member>
-        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.stopped">
-            <summary>
-            Programm not running
-            </summary>
-        </member>
-        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.runing">
-            <summary>
-            Programm running
-            </summary>
-        </member>
-        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.warning">
-            <summary>
-            Programm threw an warning
-            </summary>
-        </member>
-        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.error">
-            <summary>
-            Programm ran into an error
-            </summary>
-        </member>
-        <member name="F:Neko.RemoteDataMinerServer.CustomData.Modes.crash">
-            <summary>
-            Programm has crashed
-            </summary>
-        </member>
         <member name="T:Neko.RemoteDataMinerServer.Handler.CommandHandler">
             <summary>
             Command Handler
@@ -164,7 +114,7 @@
             Standart
             </summary>
         </member>
-        <member name="M:Neko.RemoteDataMinerServer.Handler.CommandHandler.CommandHandlerTest(System.Collections.Generic.List{Neko.RemoteDataMinerServer.CustomData.Status})">
+        <member name="M:Neko.RemoteDataMinerServer.Handler.CommandHandler.CommandHandlerTest(System.Collections.Generic.List{Neko.FancyLog.Status})">
             <summary>
             Standart
             </summary>
