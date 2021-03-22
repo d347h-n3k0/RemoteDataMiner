@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,6 +6,10 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>NekoProjectSign.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
+    <Authors>Voluna</Authors>
+    <Copyright>Voluna</Copyright>
+    <Version>0.1.1</Version>
+    <NeutralLanguage>en-150</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

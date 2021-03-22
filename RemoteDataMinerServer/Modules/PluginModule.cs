@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Neko.FancyLog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,12 +17,12 @@ namespace Neko.RemoteDataMinerServer.Modules
         /// <summary>
         /// Loads an Plugin
         /// </summary>
-        public static void LoadPlugin()
+        public static List<object> LoadPlugin()
         {
             var CurrentDir = Directory.GetCurrentDirectory();
             string[] Plugins = Directory.GetFiles(CurrentDir + "/plugins/", "*.dll");
             List<Assembly> assemblies = new List<Assembly>();
-
+            List<object> Instances = new List<object>();
             foreach (string plugin in Plugins)
             {
                 assemblies.Add(Assembly.LoadFile(plugin));
@@ -30,12 +31,16 @@ namespace Neko.RemoteDataMinerServer.Modules
 
             foreach (Assembly DLL in assemblies)
             {
+                WriteConsole.WritePluginLoaded(DLL.FullName);
                 foreach (Type type in DLL.GetExportedTypes())
                 {
                     dynamic c = Activator.CreateInstance(type);
                     c.Init(@"Hello");
+                    Instances.Add(c);
                 }
             }
+
+            return Instances;
         }
     }
 }

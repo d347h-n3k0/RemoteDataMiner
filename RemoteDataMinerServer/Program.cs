@@ -5,6 +5,7 @@ using Neko.RemoteDataMinerServer.Modules;
 using Neko.RemoteDataMinerServer.Handler;
 using Neko.RemoteDataMinerServer.CustomData;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Neko.RemoteDataMinerServer
 {
@@ -19,14 +20,25 @@ namespace Neko.RemoteDataMinerServer
 
             ConfigModule.Load(cache);
             ProjectModule.Load(cache);
-            PluginModule.LoadPlugin();
+            List<object> Plugins = PluginModule.LoadPlugin();
+
+            try
+            {
+                Thread connectionServer = new Thread(() => ConnectionServer.threadStart(cache, Plugins));
+                connectionServer.Start();
+                statuses.Add(new Status() { Module = "ConnectionServer", Version = "0.1", Mode = Modes.runing });
+            }
+            catch(Exception e)
+            {
+
+            }
 
             CommandHandler commandHandler = new CommandHandler();
             commandHandler.StatusPost += commandHandler_Status;
 
             
             commandHandler.CommandHandlerTest(statuses);
-
+             
 
             Console.ReadLine();
         }
